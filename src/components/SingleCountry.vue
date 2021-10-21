@@ -4,10 +4,10 @@
     class="card"
   >
     <div class="card-img">
-      <img :src="country.flag" alt="" />
+      <img :src="country.flags.svg" alt="" />
     </div>
     <div class="card-body">
-      <h3>{{ country.name }}</h3>
+      <h3>{{ country.name.official }}</h3>
       <ul>
         <li>
           <strong>Population:</strong>
@@ -15,7 +15,7 @@
         </li>
         <li><strong>Region:</strong> {{ country.region }}</li>
         <li v-if="country.capital">
-          <strong>Capital:</strong> {{ country.capital }}
+          <strong>Capital:</strong> {{ country.capital[0] }}
         </li>
       </ul>
     </div>

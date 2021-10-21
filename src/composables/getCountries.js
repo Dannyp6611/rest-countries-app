@@ -10,7 +10,7 @@ const getCountries = () => {
     isPending.value = true;
 
     try {
-      const res = await fetch("https://restcountries.com/v2/all");
+      const res = await fetch("https://restcountries.com/v3.1/all");
       const data = await res.json();
       countries.value = data;
       isPending.value = false;

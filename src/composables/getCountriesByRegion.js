@@ -5,9 +5,10 @@ const getCountriesByRegion = async (region) => {
   const regionCountries = ref(null);
 
   try {
-    const res = await fetch("https://restcountries.com/v2/continent/" + region);
+    const res = await fetch(`https://restcountries.com/v3.1/region/${region}`);
     const data = await res.json();
     regionCountries.value = data;
+    console.log(regionCountries.value);
   } catch (err) {
     console.log(err.message);
     error.value = err.message;

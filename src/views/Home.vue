@@ -40,7 +40,7 @@ export default {
       if (countries.value.length) {
         filteredCountries.value = countries.value.filter((country) => {
           return (
-            country.name
+            country.name.official
               .toLowerCase()
               .indexOf(searchTerm.value.toLowerCase()) != -1
           );

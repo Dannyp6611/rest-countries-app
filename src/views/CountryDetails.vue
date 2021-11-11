@@ -78,6 +78,8 @@ export default {
       router.push("/");
     };
 
+    console.log(route.params.name);
+
     const getSingleCountry = async (routeName) => {
       error.value = null;
       isPending.value = true;

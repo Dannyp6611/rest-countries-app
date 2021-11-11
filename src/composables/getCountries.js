@@ -14,7 +14,6 @@ const getCountries = () => {
       const data = await res.json();
       countries.value = data;
       isPending.value = false;
-      console.log(data);
     } catch (err) {
       error.value = err.message;
       console.log(err.message);

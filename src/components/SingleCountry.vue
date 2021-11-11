@@ -1,6 +1,6 @@
 <template>
   <router-link
-    :to="{ name: 'CountryDetails', params: { name: country.name } }"
+    :to="{ name: 'CountryDetails', params: { name: country.name.common } }"
     class="card"
   >
     <div class="card-img">

@@ -1,6 +1,6 @@
 <template>
   <nav class="filter-nav">
-    <form class="search-form">
+    <form class="search-form" @submit.prevent>
       <i class="fas fa-search"></i>
       <input
         type="text"
@@ -10,7 +10,11 @@
       />
     </form>
 
-    <div @click="toggleFilterRegion" class="filter-region">
+    <div
+      @click="toggleFilterRegion"
+      class="filter-region"
+      aria-label="select-region"
+    >
       <span v-if="!filteredRegion">Filter by Region</span>
       <span v-else> {{ filteredRegion }}</span>
       <i class="fas fa-chevron-down icon"></i>

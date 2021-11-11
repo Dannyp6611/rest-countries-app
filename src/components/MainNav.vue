@@ -1,18 +1,28 @@
 <template>
   <header>
     <nav class="main-nav">
-      <h1>Where in the world?</h1>
+      <router-link :to="{ name: 'Home' }"
+        ><h1>Where in the world?</h1></router-link
+      >
       <!-- toggle -->
       <button class="toggle">
-        <input
+        <!-- <input
           type="checkbox"
           :checked="mode === 'dark' ? 'checked' : false"
           @change="$emit('toggle')"
           id="toggleMode"
         />
         <i class="far fa-moon moon-icon" :class="{ dark: mode === 'dark' }"></i>
-        <label class="toggler" for="toggleMode">Dark Mode</label>
+        <label class="toggler" for="toggleMode">Dark Mode</label> -->
       </button>
+      <input
+        type="checkbox"
+        :checked="mode === 'dark' ? 'checked' : false"
+        @change="$emit('toggle')"
+        id="toggleMode"
+      />
+      <i class="far fa-moon moon-icon" :class="{ dark: mode === 'dark' }"></i>
+      <label class="toggler" for="toggleMode">Dark Mode</label>
     </nav>
   </header>
 </template>
@@ -35,13 +45,15 @@ header {
 .main-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px 35px;
 }
 
 .toggle {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
   background: transparent;
   outline: none;
   border: none;
